@@ -5,5 +5,9 @@
   "main": "app/server.js",
   "dependencies": {
     "express": "^4.10.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-nodemon": "^1.0.4"
   }
 }
