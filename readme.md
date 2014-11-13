@@ -10,6 +10,7 @@ $ git clone <repo-url> # Clone the repo.
 $ cd tsundoku
 $ npm install          # Install Node.JS dependencies
 $ bower install        # Install front-end dependencies
+$ gulp server          # Run the application on the default port.
 ```
 
 ## Project Structure
