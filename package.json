@@ -1,0 +1,9 @@
+{
+  "name": "tsundoku",
+  "version": "0.0.1",
+  "description": "A book tracker using the MEAN stack.",
+  "main": "app/server.js",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}
