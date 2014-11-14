@@ -19,7 +19,8 @@ $ gulp server          # Run the application on the default port.
 ├── Procfile           <- List of processes run by Heroku.
 ├── app                <- Node.JS application.
 │   └── server.js      <- Node.JS main script.
-├── package.json       <- Node.JS dependencies. 
+├── gulpfile.js        <- Gulp tasks.
+├── package.json       <- Node.JS dependencies.
 ├── public             <- Static files.
 └── readme.md          <- This file.
 ```
