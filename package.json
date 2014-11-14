@@ -4,7 +4,8 @@
   "description": "A book tracker using the MEAN stack.",
   "main": "app/server.js",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "morgan": "^1.5.0"
   },
   "devDependencies": {
     "gulp": "^3.8.10",
