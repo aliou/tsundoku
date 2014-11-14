@@ -10,18 +10,24 @@ $ git clone <repo-url> # Clone the repo.
 $ cd tsundoku
 $ npm install          # Install Node.JS dependencies
 $ bower install        # Install front-end dependencies
-$ gulp server          # Run the application on the default port.
+$ gulp serve           # Run the application on the default port.
 ```
 
 ## Project Structure
 ```
 .
 ├── Procfile           <- List of processes run by Heroku.
-├── app                <- Node.JS application.
+├── app/               <- Node.JS application.
 │   └── server.js      <- Node.JS main script.
+├── node_modules/      <- Node.JS dependencies.
 ├── gulpfile.js        <- Gulp tasks.
 ├── package.json       <- Node.JS dependencies.
-├── public             <- Static files.
+├── public/            <- Static files.
+│   ├── css/           <- Style files.
+│   ├── dist/          <- Minified JS and CSS files.
+│   ├── js/            <- JS files / Angular app.
+│   ├── vendor/        <- Bower deps.
+│   └── index.html     <- Application entry point.
 └── readme.md          <- This file.
 ```
 
@@ -33,13 +39,3 @@ project. They are:
 * `MONGOHQ_URL`: The URL of the MongoDB database we are using.
 * `GOODREADS_KEY`: Goodreads API key.
 * `GOODREADS_SECRET`: Goodreads API secret.
-
-## Libraries and other assets used
-
-### Node.JS
-
-### Angular / Front
-
-## Heroku
-
-----
