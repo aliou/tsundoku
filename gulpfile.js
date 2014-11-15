@@ -33,4 +33,12 @@ gulp.task('vendor', function() {
     .pipe(gulp.dest('./public/dist/'));
 });
 
+gulp.task('app', function() {
+  return gulp.src('./public/js/**/*.js')
+    .pipe(ngA())
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/dist/'));
+});
+
 gulp.task('default', ['serve']);
