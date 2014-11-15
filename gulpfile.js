@@ -11,10 +11,6 @@ var uglify     = require('gulp-uglify');
 
 var filters = { js: filter('*.js'), css: filter('*.css') };
 
-gulp.task('serve', function() {
-  nodemon({ script: './app/server.js', ext: 'js', ignore: ['public/*'] })
-});
-
 gulp.task('vendor', function() {
   return gulp.src(bower())
     .pipe(filters.js)
@@ -39,6 +35,11 @@ gulp.task('app', function() {
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./public/dist/'));
+});
+
+gulp.task('serve', function() {
+  nodemon({ script: './app/server.js' })
+    .on('change', ['app']);
 });
 
 gulp.task('default', ['serve']);
