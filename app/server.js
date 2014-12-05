@@ -1,13 +1,17 @@
-var express = require('express');
-var morgan  = require('morgan');
-var path    = require('path');
+var express  = require('express');
+var morgan   = require('morgan');
+var path     = require('path');
+var mongoose = require('mongoose');
 
 var app = express();
 
 app.set('port', process.env.PORT || 8000);
+app.set('db', process.env.MONGOHQ_URL || 'mongodb://localhost/tsundoku_dev');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(morgan('combined'));
+
+mongoose.connect(app.get('db'));
 
 app.get('*', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../public/index.html'))
