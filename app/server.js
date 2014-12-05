@@ -13,6 +13,8 @@ app.use(morgan('combined'));
 
 mongoose.connect(app.get('db'));
 
+app.use('/api/books', require('./api/books'));
+
 app.get('*', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../public/index.html'))
 });
