@@ -10,4 +10,9 @@ var BookSchema = new mongoose.Schema({
   cover_url:   String
 });
 
+// Add a virtual property for better access.
+BookSchema.virtual('fullTitle').get(function() {
+  return this.title + ' by ' + this.author;
+});
+
 module.exports = mongoose.model('Book', BookSchema);
