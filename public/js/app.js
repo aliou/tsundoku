@@ -6,7 +6,12 @@ function TsundokuRouting($routeProvider) {
   })
   .when('/books', {
     templateUrl: 'js/books/book-list.html',
-    controller: 'BookListCtrl'
+    controller: 'BookListCtrl',
+    resolve: {
+      books: function(Book) {
+        return Book.query();
+      }
+    }
   });
 }
 
