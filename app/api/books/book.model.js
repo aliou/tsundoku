@@ -15,4 +15,8 @@ BookSchema.virtual('fullTitle').get(function() {
   return this.title + ' by ' + this.author;
 });
 
+// Find the ISBN and cover URL on save.
+BookSchema.pre('save', function(next, done) {
+});
+
 module.exports = mongoose.model('Book', BookSchema);
