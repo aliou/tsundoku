@@ -44,3 +44,15 @@ project. They are:
 * `MONGOHQ_URL`: The URL of the MongoDB database we are using.
 * `GOODREADS_KEY`: Goodreads API key.
 * `GOODREADS_SECRET`: Goodreads API secret.
+
+## Download and save sample data
+In the folder [`app/db/`](app/db) are two scripts to download and save sample
+data. To use them run:
+
+```sh
+# This will download book data in a JSON file.
+$ node app/db/download_data.js
+
+# This will load the JSON and save the books in the Mongo database.
+$ node app/db/save_data.js
+```
