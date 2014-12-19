@@ -37,9 +37,16 @@ gulp.task('app', function() {
     .pipe(gulp.dest('./public/dist/'));
 });
 
+gulp.task('style', function() {
+  return gulp.src('./public/css/*.css')
+    .pipe(concat('style.css'))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./public/dist'));
+});
+
 gulp.task('serve', function() {
   nodemon({ script: './app/server.js' })
-    .on('change', ['app']);
+    .on('change', ['app', 'style']);
 });
 
 gulp.task('default', ['serve']);
