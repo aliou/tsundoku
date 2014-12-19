@@ -39,3 +39,22 @@ project. They are:
 * `MONGOHQ_URL`: The URL of the MongoDB database we are using.
 * `GOODREADS_KEY`: Goodreads API key.
 * `GOODREADS_SECRET`: Goodreads API secret.
+
+## Creating a feature branch
+
+To a start working on a new feature, create a new branch:
+
+```sh
+$ git checkout -b new-feature
+```
+
+Then add a few commits and push them to GitHub:
+
+```sh
+$ vim app/server.js
+# some changes...
+$ git commit
+$ git push origin master
+```
+
+Finally, create a new [Pull Request](https://github.com/aliou/tsundoku/pull/new).
