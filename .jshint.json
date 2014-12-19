@@ -35,6 +35,11 @@
     "expect": true,
     "browser": true,
     "element": true,
-    "by": true
+    "by": true,
+    "process": true,
+    "require": true,
+    "exports": true,
+    "done": true,
+    "next": true
   }
 }

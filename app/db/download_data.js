@@ -12,7 +12,7 @@ var user_id = '4823954';
 // Helper functions
 
 function createBookFromReview(review) {
-  book = new Book({
+  var book = new Book({
     title:       review.book.title,
     author:      review.book.authors.author.name,
     description: review.book.description,

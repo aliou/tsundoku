@@ -13,11 +13,13 @@ exports.list = function (req, res) {
 exports.show = function (req, res) {
   var bookId = req.param('id');
 
-  Book.findById(id, function(err, book) {
-    if (err)
+  Book.findById(bookId, function(err, book) {
+    if (err) {
       return res.json(500, err);
-    if (!book)
+    }
+    if (!book) {
       return res.json(404);
+    }
 
     res.json(book);
   });
@@ -27,8 +29,9 @@ exports.create = function (req, res) {
   var book = new Book(req.body);
 
   book.save(function(err) {
-    if (err)
+    if (err) {
       return res.json(400, err);
+    }
 
     res.json(book);
   });
@@ -38,10 +41,12 @@ exports.destroy = function (req, res) {
   var id = req.param('id');
 
   Book.findByIdAndRemove(id, function(err, book) {
-    if (err)
+    if (err) {
       return res.json(500, err);
-    if (!book)
+    }
+    if (!book) {
       return res.json(404);
+    }
 
     res.json(200);
   });
