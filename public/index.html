@@ -10,8 +10,8 @@
   </head>
   <body>
 
-    <header class='navbar navbar-static-top navbar-default' ng-controller='HeaderCtrl' role='banner'>
-      <div class='container'>
+    <nav class='navbar navbar-default navbar-custom navbar-fixed-top' ng-controller='HeaderCtrl' role='banner'>
+      <div class='container-fluid'>
         <div class='navbar-header'>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ts-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -23,18 +23,22 @@
         </div>
 
         <nav class='collapse navbar-collapse' id='ts-navbar-collapse'>
-          <u class='nav navbar-nav navbar-right'>
-            <li><a ng-class="{ active: isActive('/#/login') }" href='/#/login'>Login</a></li>
-          </u>
+          <ul class='nav navbar-nav navbar-right'>
+            <li><a href="/#books">Books</a></li>
+            <li><a href="/#lists">Lists</a></li>
+            <li><a href="/#people">People</a></li>
+            <li><a href="/#/login">Login</a></li>
+          </ul>
         </nav>
 
       </div>
-    </header>
+    </nav>
 
     <!-- Where the template will appear. -->
     <div ng-view></div>
 
     <script src="/dist/vendor.js"></script>
     <script src="/dist/app.js"></script>
+    <script src="/dist/effects.js"></script>
   </body>
 </html>
