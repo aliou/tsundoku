@@ -45,14 +45,21 @@ project. They are:
 * `GOODREADS_KEY`: Goodreads API key.
 * `GOODREADS_SECRET`: Goodreads API secret.
 
-## Download and save sample data
-In the folder [`app/db/`](app/db) are two scripts to download and save sample
-data. To use them run:
+## Creating a feature branch
+
+To a start working on a new feature, create a new branch:
 
 ```sh
-# This will download book data in a JSON file.
-$ node app/db/download_data.js
-
-# This will load the JSON and save the books in the Mongo database.
-$ node app/db/save_data.js
+$ git checkout -b new-feature
 ```
+
+Then add a few commits and push them to GitHub:
+
+```sh
+$ vim app/server.js
+# some changes...
+$ git commit
+$ git push origin master
+```
+
+Finally, create a new [Pull Request](https://github.com/aliou/tsundoku/pull/new).
