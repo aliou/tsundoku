@@ -10,8 +10,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify     = require('gulp-uglify');
 
 var filters = {
-  js:  filter('*.js'),
-  css: filter('*.css')
+  css: filter('*.css'),
+  js:  filter('*.js')
+};
+
+var paths = {
+  js:  './public/js/**/*.js',
+  css: './public/css/*.css'
 };
 
 gulp.task('vendor-js', function() {
@@ -38,7 +43,7 @@ gulp.task('vendor-css', function() {
 gulp.task('vendor', ['vendor-js', 'vendor-css']);
 
 gulp.task('app-js', function() {
-  return gulp.src('./public/js/**/*.js')
+  return gulp.src(paths.js)
     .pipe(ngA())
     .pipe(concat('app.js'))
     .pipe(uglify())
@@ -46,7 +51,7 @@ gulp.task('app-js', function() {
 });
 
 gulp.task('app-css', function() {
-  return gulp.src('./public/css/*.css')
+  return gulp.src(paths.css)
     .pipe(concat('style.css'))
     .pipe(minifycss())
     .pipe(gulp.dest('./public/dist'));
@@ -55,8 +60,8 @@ gulp.task('app-css', function() {
 gulp.task('app', ['app-js', 'app-css']);
 
 gulp.task('watch', function() {
-  gulp.watch('./public/js/**/*.js', ['app-js'], function() {});
-  gulp.watch('./public/css/*.css',  ['app-css'],   function() {});
+  gulp.watch(paths.js,  ['app-js'],  function() {});
+  gulp.watch(paths.css, ['app-css'], function() {});
 });
 
 gulp.task('serve', function() {
