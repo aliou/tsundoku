@@ -18,7 +18,7 @@ function createBookFromReview(review) {
     description: review.book.description,
     isbn:        review.book.isbn13 || review.book.isbn,
     length:      review.book.num_pages,
-    cover_url:   review.book.image_url
+    coverUrl:    review.book.image_url.replace(/(\d+)m/, "$1l")
   });
 
   return (book);
