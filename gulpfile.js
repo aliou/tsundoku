@@ -59,9 +59,8 @@ gulp.task('watch', function() {
   gulp.watch('./public/css/*.css',  ['app-css'],   function() {});
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', ['watch'], function() {
   return nodemon({ script: './app/server.js' })
-    .on('start', ['watch'])
     .on('change', ['watch']);
 });
 
