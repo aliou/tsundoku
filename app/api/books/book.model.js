@@ -9,12 +9,17 @@ var BookSchema = new mongoose.Schema({
   isbn:        { type: String, index: true },
   goodreadsId: String,
   length:      Number,
-  coverUrl:    String
+  coverUrl:    String,
+  popular:     Boolean
 });
 
 // Add a virtual property for better access.
 BookSchema.virtual('fullTitle').get(function() {
   return this.title + ' by ' + this.author;
+});
+
+BookSchema.virtual('isPopular').get(function() {
+  return this.popular;
 });
 
 // Find the ISBN and cover URL on save.
