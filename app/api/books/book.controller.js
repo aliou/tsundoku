@@ -10,6 +10,16 @@ exports.list = function (req, res) {
   });
 };
 
+exports.popular = function (req, res) {
+  Book.find({ popular: true }).limit(10).exec(function(err, books) {
+    if (err) {
+      return res.json(500, err);
+    }
+
+    res.json(books);
+  });
+};
+
 exports.show = function (req, res) {
   var bookId = req.param('id');
 
