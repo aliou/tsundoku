@@ -18,7 +18,8 @@ function createBookFromReview(review) {
     description: review.book.description,
     isbn:        review.book.isbn13 || review.book.isbn,
     length:      review.book.num_pages,
-    coverUrl:    review.book.image_url.replace(/(\d+)m/, "$1l")
+    coverUrl:    review.book.image_url.replace(/(\d+)m/, "$1l"),
+    goodreadsId: review.book.id
   });
 
   return (book);
