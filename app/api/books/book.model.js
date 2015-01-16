@@ -22,4 +22,8 @@ BookSchema.virtual('isPopular').get(function() {
   return this.popular;
 });
 
+BookSchema.statics.popularBooks = function(cb) {
+  this.find({ popular: true }, cb);
+};
+
 module.exports = mongoose.model('Book', BookSchema);
