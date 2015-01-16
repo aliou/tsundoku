@@ -15,7 +15,7 @@ function createBookFromReview(review) {
   var book = new Book({
     title:       review.book.title,
     author:      review.book.authors.author.name,
-    description: review.book.description,
+    description: review.book.description || review.book.title,
     isbn:        review.book.isbn13 || review.book.isbn,
     length:      review.book.num_pages,
     coverUrl:    review.book.image_url.replace(/(\d+)m/, "$1l"),
