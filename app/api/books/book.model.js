@@ -5,9 +5,9 @@ var BookSchema = new mongoose.Schema({
   title:       { type: String, required: true },
   author:      { type: String, required: true },
   description: { type: String, required: true },
-  createdAt:   { type: Date, default: Date.now },
-  isbn:        { type: String, index: true },
-  goodreadsId: { type: String, index: true, required: true },
+  createdAt:   { type: Date,   default: Date.now },
+  goodreadsId: { type: String, required: true },
+  isbn:        String,
   length:      Number,
   coverUrl:    String,
   popular:     Boolean
