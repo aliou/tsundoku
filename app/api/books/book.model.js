@@ -22,8 +22,4 @@ BookSchema.virtual('isPopular').get(function() {
   return this.popular;
 });
 
-// Find the ISBN and cover URL on save.
-BookSchema.pre('save', function(next, done) {
-});
-
 module.exports = mongoose.model('Book', BookSchema);
