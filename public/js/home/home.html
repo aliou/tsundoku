@@ -20,7 +20,7 @@
       <div class='book-list row'>
         <div class='book-list-element col-md-2' ng-repeat='book in popularBooks'>
           <a href='#/books/{{ book._id }}'>
-            <img src='{{ book.coverUrl }}' alt='{{ book.title }}'>
+            <img src='{{ book.coverUrl }}' alt='{{ book.title }}' tooltip-placement='top' tooltip='{{ book.title }}'>
           </a>
         </div>
       </div>

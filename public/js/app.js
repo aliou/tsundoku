@@ -1,6 +1,5 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 
-// Navbar
 $(document).ready(function() {
   var MQL = 1170;
   if ($(window).width() > MQL) {
