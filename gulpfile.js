@@ -39,7 +39,6 @@ gulp.task('app', function() {
 
 gulp.task('serve', function() {
   nodemon({ script: './app/server.js' })
-    .on('change', ['app']);
 });
 
 gulp.task('default', ['serve']);
