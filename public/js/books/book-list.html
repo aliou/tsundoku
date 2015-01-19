@@ -1,6 +1,15 @@
-<div class='container'>
-  <div class='col-md-8 col-md-push-2'>
-    <h1>Book list</h1>
-    <pre>{{ books }}</pre>
+<div class='container home-main-content'>
+  <div class='row'>
+    <div class='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1'>
+
+      <div class='book-list row'>
+        <div class='book-list-element col-md-2' ng-repeat='book in books'>
+          <a href='#/books/{{ book._id }}'>
+            <img src='{{ book.coverUrl }}' alt='{{ book.title }}'>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
