@@ -1,7 +1,7 @@
 var Book = require('./book.model');
 
 exports.list = function (req, res) {
-  Book.find({}, function(err, books) {
+  Book.findOne({}, function(err, books) {
     if (err) {
       return res.json(500, err);
     }
