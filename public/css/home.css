@@ -45,3 +45,17 @@
     font-size: 80px;
   }
 }
+
+.home-main-content {
+  margin-bottom: 50px;
+}
+
+.book-list {
+  margin-top:    50px;
+  margin-bottom: 50px;
+}
+
+.book-list-element img {
+  width: 100%;
+  height: auto;
+}
