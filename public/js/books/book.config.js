@@ -11,7 +11,12 @@ function bookConfig($routeProvider) {
     })
     .when('/books/:id', {
       templateUrl: 'js/books/book-detail.html',
-      controller: 'BookDetailCtrl'
+      controller: 'BookDetailCtrl',
+      resolve: {
+        book: function($route, Book) {
+          return Book.get({ id: $route.current.params.id });
+        }
+      }
     })
 }
 

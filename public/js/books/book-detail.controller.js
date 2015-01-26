@@ -1,5 +1,5 @@
-function BookDetailController($scope, $route, Book) {
-  $scope.book = Book.get({ _id: $route.current.params.id });
+function BookDetailController($scope, book) {
+  $scope.book = book;
 }
 
 angular.module('app').controller('BookDetailCtrl', BookDetailController);
