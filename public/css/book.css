@@ -1,0 +1,12 @@
+.book-header {
+  background-color: #808080;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  margin-bottom: 50px;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  background-image: url('../images/book-bg.jpg');
+  height: 60px;
+}
