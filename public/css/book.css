@@ -10,3 +10,16 @@
   background-image: url('../images/book-bg.jpg');
   height: 60px;
 }
+
+.book-page-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.book-page-cover img {
+  max-width: 100%;
+}
+
+.book-page-description p {
+  font-size: 15px;
+}
