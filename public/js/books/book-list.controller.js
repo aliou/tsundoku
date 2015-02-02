@@ -1,16 +1,17 @@
-// Get the app.
 var app = angular.module('app');
 
-// Define the controller.
-function BookListController($scope, books) {
-  // Store in scope the books we get from the book service by groups of 6.
-  var byRow = 6;
-  $scope.books = [];
+function BookListController($scope, $route, books) {
+  $scope.books       = [];
 
-  while(books.length > 0) {
-    $scope.books.push(books.splice(0, byRow));
+  $scope.currentPage = $route.current.params.page || 1;
+  $scope.byRow       = 6;
+  $scope.perPage     = 18;
+  $scope.totalItems  = 82;
+
+
+  while (books.length > 0) {
+    $scope.books.push(books.splice(0, $scope.byRow));
   }
 }
 
-// Save the controller in the app.
 app.controller('BookListCtrl', BookListController);
