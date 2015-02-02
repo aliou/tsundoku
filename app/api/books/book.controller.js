@@ -1,3 +1,4 @@
+var _    = require('underscore');
 var Book = require('./book.model');
 
 exports.list = function (req, res) {
@@ -11,10 +12,13 @@ exports.list = function (req, res) {
 };
 
 exports.popular = function (req, res) {
-  Book.popularBooks(6, function(err, books) {
+  Book.popularBooks(10, function(err, books) {
     if (err) {
       return res.json(500, err);
     }
+
+    books = _.shuffle(books);
+    books = _.sample(books, 6);
 
     res.json(books);
   });
