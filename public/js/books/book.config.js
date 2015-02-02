@@ -4,8 +4,8 @@ function bookConfig($routeProvider) {
       templateUrl: 'js/books/book-list.html',
       controller: 'BookListCtrl',
       resolve: {
-        books: function(Book) {
-          return Book.query().$promise;
+        books: function($route, Book) {
+          return Book.query({ page: $route.current.params.page } ).$promise;
         }
       }
     })

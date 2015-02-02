@@ -2,7 +2,13 @@ var _    = require('underscore');
 var Book = require('./book.model');
 
 exports.list = function (req, res) {
-  Book.find({}, function(err, books) {
+  var per_page = 18
+  var page     = (req.param('page') || 1) - 1;
+
+  var query = Book.find({}, null, { skip: page * per_page, limit: per_page })
+
+  query.exec(function(err, books) {
+
     if (err) {
       return res.json(500, err);
     }
@@ -21,24 +27,6 @@ exports.popular = function (req, res) {
     books = _.sample(books, 6);
 
     res.json(books);
-  });
-};
-
-exports.togglePopular = function (req, res) {
-  var bookId = req.param('id');
-
-  Book.findById(bookId, function(err, book) {
-    if (err) {
-      return res.json(500, err);
-    }
-    if (!book) {
-      return res.json(404);
-    }
-
-    book.popular = !book.popular;
-    book.save();
-
-    res.json(book);
   });
 };
 
@@ -81,5 +69,23 @@ exports.destroy = function (req, res) {
     }
 
     res.json(200);
+  });
+};
+
+exports.togglePopular = function (req, res) {
+  var bookId = req.param('id');
+
+  Book.findById(bookId, function(err, book) {
+    if (err) {
+      return res.json(500, err);
+    }
+    if (!book) {
+      return res.json(404);
+    }
+
+    book.popular = !book.popular;
+    book.save();
+
+    res.json(book);
   });
 };
