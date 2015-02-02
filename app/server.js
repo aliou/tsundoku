@@ -19,6 +19,7 @@ app.use(methodOverride());
 
 mongoose.connect(app.get('db'));
 
+app.use('/api/users', require('./api/users'));
 app.use('/api/books', require('./api/books'));
 
 app.get('*', function(req, res) {
