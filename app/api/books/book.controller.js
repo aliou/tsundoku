@@ -24,6 +24,24 @@ exports.popular = function (req, res) {
   });
 };
 
+exports.togglePopular = function (req, res) {
+  var bookId = req.param('id');
+
+  Book.findById(bookId, function(err, book) {
+    if (err) {
+      return res.json(500, err);
+    }
+    if (!book) {
+      return res.json(404);
+    }
+
+    book.popular = !book.popular;
+    book.save();
+
+    res.json(book);
+  });
+};
+
 exports.show = function (req, res) {
   var bookId = req.param('id');
 
