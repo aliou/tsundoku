@@ -1,0 +1,17 @@
+<header class='book-header'></header>
+
+<div class='container home-main-content'>
+  <div class='row'>
+    <div class='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1'>
+
+      <div class='book-list row' ng-repeat='group in books'>
+        <div class='book-list-element col-md-2' ng-repeat='book in group'>
+          <a href='#/books/{{ book._id }}'>
+            <img src='{{ book.coverUrl }}' alt='{{ book.title }}'>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tsundoku</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato|Open+Sans' rel='stylesheet' type='text/css'>
     <link href="/dist/vendor.css" rel="stylesheet">
+    <link href="/dist/style.css" rel="stylesheet">
   </head>
   <body>
 
-    <header class='navbar navbar-static-top navbar-default' ng-controller='HeaderCtrl' role='banner'>
-      <div class='container'>
+    <nav class='navbar navbar-default navbar-custom navbar-fixed-top' ng-controller='HeaderCtrl' role='banner'>
+      <div class='container-fluid'>
         <div class='navbar-header'>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ts-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -18,19 +20,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/#">Tsundoku</a>
+          <a class="navbar-brand" href="/#/">Tsundoku</a>
         </div>
 
         <nav class='collapse navbar-collapse' id='ts-navbar-collapse'>
-          <u class='nav navbar-nav navbar-right'>
-            <li><a ng-class="{ active: isActive('/#/login') }" href='/#/login'>Login</a></li>
-          </u>
+          <ul class='nav navbar-nav navbar-right'>
+            <li ng-class="{ active: isActive('/books') }"><a href="/#/books">Books</a></li>
+            <li ng-class="{ active: isActive('/lists') }"><a href="/#/lists">Lists</a></li>
+            <li ng-class="{ active: isActive('/login') }"><a href="/#/login">Login</a></li>
+          </ul>
         </nav>
 
       </div>
-    </header>
+    </nav>
 
-    <!-- Where the template will appear. -->
     <div ng-view></div>
 
     <script src="/dist/vendor.js"></script>
