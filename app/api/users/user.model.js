@@ -7,6 +7,7 @@ var UserSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName:  { type: String, required: true },
 
+  provider: { type: String, required: true },
   local: {
     email: String,
     passowrd: String
