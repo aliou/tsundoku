@@ -5,9 +5,9 @@ var BookList = require('./booklist.model');
 exports.list = function (req, res) {
   var query = BookList.find({}, function(err, booklists) {
     if (err) {
-      return res.json(500, err);
-    }
+      return res.status(500).json(err);
 
+    }
     res.json(booklists);
   });
 };
@@ -15,7 +15,7 @@ exports.list = function (req, res) {
 exports.popular = function (req, res) {
   BookList.popularBooks(10, function(err, booklists) {
     if (err) {
-      return res.json(500, err);
+      return res.status(500).json(err);
     }
 
     booklists = _.shuffle(booklists);
@@ -30,10 +30,10 @@ exports.show = function (req, res) {
 
   BookList.findById(booklistId, function(err, booklist) {
     if (err) {
-      return res.json(500, err);
+      return res.status(500).json(err);
     }
     if (!book) {
-      return res.json(404);
+      return res.status(404);
     }
 
     res.json(booklist);
@@ -45,7 +45,7 @@ exports.create = function (req, res) {
 
   booklist.save(function(err) {
     if (err) {
-      return res.json(400, err);
+      return res.status(400).json(err);
     }
 
     res.json(booklist);
@@ -57,13 +57,13 @@ exports.destroy = function (req, res) {
 
   BookList.findByIdAndRemove(id, function(err, booklist) {
     if (err) {
-      return res.json(500, err);
+      return res.status(500).json(err);
     }
     if (!booklist) {
-      return res.json(404);
+      return res.status(404);
     }
 
-    res.json(200);
+    res.status(200);
   });
 };
 
@@ -72,10 +72,10 @@ exports.togglePopular = function (req, res) {
 
   BookList.findById(booklistId, function(err, booklist) {
     if (err) {
-      return res.json(500, err);
+      return res.status(500).json(err);
     }
     if (!booklist) {
-      return res.json(404);
+      return res.status(404);
     }
 
     booklist.popular = !booklist.popular;
