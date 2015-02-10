@@ -3,7 +3,9 @@ var express        = require('express');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');
+var passport       = require('passport');
 var path           = require('path');
+var session        = require('express-session');
 
 var app = express();
 
@@ -13,7 +15,16 @@ app.set('db', process.env.MONGOHQ_URL || 'mongodb://localhost/tsundoku_dev');
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(morgan('combined'));
 
-app.use(bodyParser.urlencoded({ extended :false }));
+app.use(session({
+  resave:            true,
+  saveUninitialized: true,
+  secret:            process.env.SECRET || 'SECRET!'
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
