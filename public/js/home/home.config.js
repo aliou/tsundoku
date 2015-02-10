@@ -5,7 +5,11 @@ function initialConfig($routeProvider) {
     resolve: {
       popularBooks: function(Book) {
         return Book.popular();
-      }
+      },
+      popularLists: function() {
+        // TODO: return BookList.popular();
+        return []
+      },
     }
   });
 
