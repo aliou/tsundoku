@@ -65,8 +65,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('serve', ['watch'], function() {
-  return nodemon({ script: './app/server.js' })
-    .on('change', ['watch']);
+  return nodemon({ script: './app/server.js' });
 });
 
 gulp.task('default', ['serve']);
