@@ -1,4 +1,5 @@
 var Book     = require('./../books/book.model');
+var bcrypt   = require('bcrypt-nodejs');
 var mongoose = require ('mongoose');
 
 // TODO: Add "to read" and "read" default lists.

@@ -28,3 +28,11 @@ exports.show = function(req, res) {
     res.json(user);
   });
 }
+
+exports.login = function(req, res) {
+  res.json(req.user);
+};
+
+exports.signup = function(req, res) {
+  res.json(req.user);
+};
