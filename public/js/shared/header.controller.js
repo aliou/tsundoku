@@ -1,6 +1,8 @@
 var app = angular.module('app');
 
 function HeaderController($scope, $location, $modal) {
+  $scope.authenticated = false;
+
   $scope.isActive = function(viewLocation) {
     return (viewLocation === $location.path());
   };
@@ -11,12 +13,19 @@ function HeaderController($scope, $location, $modal) {
       controller: 'loginModalCtrl'
     });
   };
+
+  $scope.logoutModal = function() {
+    var modalInstance = $modal.open({
+      templateUrl: 'js/shared/logoutModal.html',
+      controller: 'logoutModalCtrl'
+    });
+  };
 }
 
 app.controller('loginModalCtrl', function($scope, $modalInstance) {
-  $scope.cancel = function() {
-    $modalInstance.dismiss('cancel');
-  };
+});
+
+app.controller('logoutModalCtrl', function($scope, $modalInstance) {
 });
 
 app.controller('HeaderCtrl', HeaderController);
