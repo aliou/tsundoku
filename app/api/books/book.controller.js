@@ -5,7 +5,8 @@ exports.list = function (req, res) {
   var per_page = 18
   var page     = (req.param('page') || 1) - 1;
 
-  var query = Book.find({}, null, { skip: page * per_page, limit: per_page })
+  // var query = Book.find({}, null, { skip: page * per_page, limit: per_page })
+  var query = Book.find({})
 
   query.exec(function(err, books) {
 
