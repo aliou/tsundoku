@@ -1,13 +1,12 @@
 var _        = require('underscore');
 var BookList = require('./booklist.model');
-// var Book = require('../books/book.model');
 
 exports.list = function (req, res) {
   var query = BookList.find({}, function(err, booklists) {
     if (err) {
       return res.status(500).json(err);
-
     }
+
     res.json(booklists);
   });
 };
@@ -32,7 +31,7 @@ exports.show = function (req, res) {
     if (err) {
       return res.status(500).json(err);
     }
-    if (!book) {
+    if (!booklist) {
       return res.status(404);
     }
 
@@ -84,4 +83,3 @@ exports.togglePopular = function (req, res) {
     res.json(booklist);
   });
 };
-

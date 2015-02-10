@@ -14,6 +14,4 @@ BookListSchema.virtual('isPopular').get(function() {
   return this.popular;
 });
 
-
 module.exports = mongoose.model('BookList', BookListSchema);
-
