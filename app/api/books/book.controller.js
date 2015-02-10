@@ -24,9 +24,7 @@ exports.popular = function (req, res) {
       return res.status(500).json(err);
     }
 
-    books = _.shuffle(books);
-    books = _.sample(books, 6);
-
+    books = _.chain(books).shuffle().sample(6).value();
     res.json(books);
   });
 };
