@@ -1,7 +1,9 @@
-var express  = require('express');
-var morgan   = require('morgan');
-var path     = require('path');
-var mongoose = require('mongoose');
+var bodyParser     = require('body-parser');
+var express        = require('express');
+var methodOverride = require('method-override');
+var mongoose       = require('mongoose');
+var morgan         = require('morgan');
+var path           = require('path');
 
 var app = express();
 
@@ -10,6 +12,10 @@ app.set('db', process.env.MONGOHQ_URL || 'mongodb://localhost/tsundoku_dev');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(morgan('combined'));
+
+app.use(bodyParser.urlencoded({ extended :false }));
+app.use(bodyParser.json());
+app.use(methodOverride());
 
 mongoose.connect(app.get('db'));
 
