@@ -4,9 +4,7 @@ var mongoose = require ('mongoose');
 // TODO: Add "to read" and "read" default lists.
 // TODO: Add user custom lists.
 var UserSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName:  { type: String, required: true },
-
+  username: { type: String, required: true },
   provider: { type: String, required: true },
   local: {
     email: String,

@@ -5,12 +5,9 @@ var User          = require('./user.model');
 
 var router = express.Router();
 
-// No need to be auth'ed.
-router.post('/',       controller.create);
-router.get('/:id',     controller.show);
+// TODO: Remove the following routes.
+router.get('/',          controller.list);
 
-// Auth'ed routes.
-router.post('/login',  controller.login);
-router.post('/logout', controller.logout);
+router.get('/:username', controller.show);
 
 module.exports = router
