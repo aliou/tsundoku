@@ -12,13 +12,10 @@ exports.list = function (req, res) {
 };
 
 exports.popular = function (req, res) {
-  BookList.popularBooks(10, function(err, booklists) {
+  BookList.popularBooks(5, function(err, booklists) {
     if (err) {
       return res.status(500).json(err);
     }
-
-    booklists = _.shuffle(booklists);
-    booklists = _.sample(booklists, 6);
 
     res.json(booklists);
   });
