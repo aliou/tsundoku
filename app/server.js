@@ -34,9 +34,10 @@ app.use(methodOverride());
 
 mongoose.connect(app.get('db'));
 
-app.use('/api/users', require('./api/users'));
-app.use('/api/books', require('./api/books'));
-app.use('/api/lists', require('./api/booklist'));
+app.use('/api/users',    require('./api/users'));
+app.use('/api/books',    require('./api/books'));
+app.use('/api/lists',    require('./api/booklist'));
+app.use('/api/comments', require('./api/comments'));
 
 app.get('/api/fuckthat', function(req, res) {
   // 54b93beadcb4a86190caf5ba

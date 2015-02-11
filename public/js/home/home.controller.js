@@ -1,7 +1,7 @@
-function HomeController($scope, popularBooks, popularLists) {
+function HomeController($scope, popularBooks, popularLists, popularComments) {
   $scope.popularBooks   = popularBooks;
   $scope.popularLists   = popularLists;
-  $scope.popularReviews = [];
+  $scope.popularReviews = popularComments;
 }
 
 angular.module('app').controller('HomeCtrl', HomeController);

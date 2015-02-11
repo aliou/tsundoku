@@ -1,6 +1,5 @@
 var _       = require('underscore');
 var Book    = require('./book.model');
-var Comment = require('../comment/comment.model');
 
 exports.list = function (req, res) {
   var per_page = 18

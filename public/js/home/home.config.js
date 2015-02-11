@@ -6,10 +6,13 @@ function initialConfig($routeProvider) {
       popularBooks: function(Book) {
         return Book.popular();
       },
-      popularLists: function() {
-        // TODO: return BookList.popular();
-        return []
+      popularLists: function(BookList) {
+        return BookList.popular();
       },
+      popularComments: function() {
+        // TODO: return Comment.popular();
+        return [];
+      }
     }
   });
 
