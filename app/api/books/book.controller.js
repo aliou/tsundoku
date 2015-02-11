@@ -34,7 +34,7 @@ exports.popular = function (req, res) {
 exports.show = function (req, res) {
   var bookId = req.param('id');
 
-  Book.findById(bookId, function(err, book) {
+  Book.findById(bookId).populate('comments').exec(function(err, book) {
     if (err) {
       return res.json(500, err);
     }
