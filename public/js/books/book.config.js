@@ -14,7 +14,8 @@ function bookConfig($routeProvider) {
       controller: 'BookDetailCtrl',
       resolve: {
         book: function($route, Book) {
-          return Book.get({ id: $route.current.params.id });
+          return Book.get({ id: $route.current.params.id }).$promise.
+            catch(function(error) { return null; });
         }
       }
     })
