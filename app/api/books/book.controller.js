@@ -1,5 +1,6 @@
-var _    = require('underscore');
-var Book = require('./book.model');
+var _       = require('underscore');
+var Book    = require('./book.model');
+var Comment = require('../comment/comment.model');
 
 exports.list = function (req, res) {
   var per_page = 18
@@ -42,6 +43,39 @@ exports.show = function (req, res) {
     }
 
     res.json(book);
+  });
+};
+
+exports.addComment = function(req, res) {
+  var bookId          = req.param('id');
+  var commentContent = req.param('comment');
+  var user            = req.param('user');
+
+  Book.findById(bookId).populate('comments').exec(function(err, book) {
+    if (err) {
+      // TODO: Create error message.
+      return res.status(500).json(err);
+    }
+    if (!book) {
+      return res.status(404);
+    }
+
+    var comment = new Comment({ content: commentContent, user: user });
+    comment.save(function(err) {
+      if (err) {
+        return res.status(500).json(err);
+      }
+
+      book.comments.push(comment);
+      book.save(function(err) {
+        if (err) {
+          // TODO: Create error message.
+          return res.status(500).json(err);
+        }
+
+        res.json(book.comments);
+      });
+    });
   });
 };
 

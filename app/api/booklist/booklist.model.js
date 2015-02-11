@@ -1,6 +1,5 @@
-var mongoose  = require('mongoose');
-var Book	= require('../books/book.model.js');
-var Comment   = require('./../Comment/comment.model');
+var mongoose = require('mongoose');
+var Comment  = require('../comment/comment.model')
 
 var BookListSchema = new mongoose.Schema({
   books:       [ { type: mongoose.Schema.Types.ObjectId, ref: 'Book' } ],

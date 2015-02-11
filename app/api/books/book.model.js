@@ -1,7 +1,5 @@
-var mongoose = require('mongoose');
 var mongoose  = require('mongoose');
 var Goodreads = require('./goodreads');
-var Comment   = require('./../Comment/comment.model');
 
 var BookSchema = new mongoose.Schema({
   title:       { type: String, required: true },
