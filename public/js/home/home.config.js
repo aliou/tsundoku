@@ -9,9 +9,9 @@ function initialConfig($routeProvider) {
     }
   });
 
-  $routeProvider.otherwise({
-    redirectTo: '/'
-  });
+  // $routeProvider.otherwise({
+  //   redirectTo: '/'
+  // });
 }
 
 angular.module('app').config(initialConfig);
