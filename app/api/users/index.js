@@ -11,8 +11,9 @@ var router = express.Router();
 // TODO: Remove the following routes.
 router.get('/',          controller.list);
 
-router.post('/login',    passport.authenticate('local'), controller.login);
+router.post('/login',    passport.authenticate('local'),        controller.login);
 router.post('/signup',   passport.authenticate('local-signup'), controller.signup);
 router.get('/:username', controller.show);
+router.get('/logout',    controller.logout);
 
 module.exports = router
