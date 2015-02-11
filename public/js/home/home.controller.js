@@ -1,6 +1,6 @@
-function HomeController($scope, popularBooks) {
+function HomeController($scope, popularBooks, popularLists) {
   $scope.popularBooks   = popularBooks;
-  $scope.popularLists   = [];
+  $scope.popularLists   = popularLists;
   $scope.popularReviews = [];
 }
 

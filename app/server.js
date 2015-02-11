@@ -20,6 +20,7 @@ app.use(methodOverride());
 mongoose.connect(app.get('db'));
 
 app.use('/api/books', require('./api/books'));
+app.use('/api/lists', require('./api/booklist'));
 
 app.get('*', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../public/index.html'))

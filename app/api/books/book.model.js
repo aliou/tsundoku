@@ -23,7 +23,8 @@ BookSchema.virtual('isPopular').get(function() {
 });
 
 BookSchema.statics.popularBooks = function(limit, cb) {
-  this.find({ popular: true }, null, { limit: limit }, cb);
+  this.find({ popular: true }, null, { limit: limit }).
+    populate('books', 'coverUrl').exec(cb);
 };
 
 module.exports = mongoose.model('Book', BookSchema);
