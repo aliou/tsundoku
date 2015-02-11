@@ -8,9 +8,6 @@ var User = require('./user.model');
 
 var router = express.Router();
 
-// TODO: Remove the following routes.
-router.get('/',          controller.list);
-
 router.post('/login',    passport.authenticate('local', { failureFlash: true }),        controller.login);
 router.post('/signup',   passport.authenticate('local-signup', { failureFlash: true }), controller.signup);
 router.get('/logout',    controller.logout);
