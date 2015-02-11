@@ -1,5 +1,7 @@
 var bodyParser     = require('body-parser');
+var cookieParser   = require('cookie-parser')
 var express        = require('express');
+var flash          = require('connect-flash');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');
@@ -20,6 +22,8 @@ app.use(session({
   saveUninitialized: true,
   secret:            process.env.SECRET || 'SECRET!'
 }));
+app.use(cookieParser())
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
