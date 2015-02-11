@@ -1,5 +1,4 @@
-var mongoose  = require('mongoose');
-var Goodreads = require('./goodreads');
+var mongoose = require('mongoose');
 
 var BookSchema = new mongoose.Schema({
   title:       { type: String, required: true },

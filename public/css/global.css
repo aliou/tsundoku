@@ -93,3 +93,8 @@ body {
             transform: translate3d(0, 100%, 0);
   }
 }
+
+.pointer {
+  cursor: pointer;
+  cursor: hand;
+}
