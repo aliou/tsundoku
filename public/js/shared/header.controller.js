@@ -22,10 +22,4 @@ function HeaderController($scope, $location, $modal) {
   };
 }
 
-app.controller('loginModalCtrl', function($scope, $modalInstance) {
-});
-
-app.controller('logoutModalCtrl', function($scope, $modalInstance) {
-});
-
 app.controller('HeaderCtrl', HeaderController);

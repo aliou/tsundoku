@@ -5,7 +5,7 @@ function bookConfig($routeProvider) {
       controller: 'BookListCtrl',
       resolve: {
         books: function($route, Book) {
-          return Book.query({ page: $route.current.params.page } ).$promise;
+          return Book.query({ page: $route.current.params.page }).$promise;
         }
       }
     })
