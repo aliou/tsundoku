@@ -12,7 +12,7 @@ exports.list = function (req, res) {
 };
 
 exports.popular = function (req, res) {
-  BookList.popularBooks(5, function(err, booklists) {
+  BookList.popularLists(function(err, booklists) {
     if (err) {
       return res.status(500).json(err);
     }

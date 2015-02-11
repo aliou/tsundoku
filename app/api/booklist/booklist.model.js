@@ -9,8 +9,8 @@ var BookListSchema = new mongoose.Schema({
   comments:    [ { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' } ]
 });
 
-BookListSchema.virtual('isPopular').get(function() {
-  return this.popular;
-});
+BookListSchema.statics.popularLists = function(limit, cb) {
+  this.find({ popular: true }).exec(cb);
+};
 
 module.exports = mongoose.model('BookList', BookListSchema);
