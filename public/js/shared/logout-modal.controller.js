@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-function logoutModalController($scope, $modalInstance, $http) {
+function logoutModalController($scope, $modalInstance, $http, Session) {
   $scope.error = null;
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
@@ -9,7 +9,7 @@ function logoutModalController($scope, $modalInstance, $http) {
   $scope.logout = function() {
     $http.get('/api/users/logout')
     .success(function() {
-      // TODO: Auth on local side.
+      Session.destroySession();
       $modalInstance.close();
     }).error(function() {
       $scope.error = { message: 'An error occured. Please try again.' };

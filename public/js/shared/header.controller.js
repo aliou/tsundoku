@@ -1,7 +1,11 @@
 var app = angular.module('app');
 
-function HeaderController($scope, $location, $modal) {
-  $scope.authenticated = false;
+function HeaderController($scope, $location, $modal, Session) {
+  $scope.$watch(function() {
+    return Session.hasSession();
+  }, function(value) {
+    $scope.authenticated = value;
+  });
 
   $scope.isActive = function(viewLocation) {
     return (viewLocation === $location.path());
