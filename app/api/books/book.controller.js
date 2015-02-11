@@ -47,9 +47,9 @@ exports.show = function (req, res) {
 };
 
 exports.addComment = function(req, res) {
-  var bookId          = req.param('id');
+  var bookId         = req.param('id');
   var commentContent = req.param('comment');
-  var user            = req.param('user');
+  var user           = req.param('user');
 
   Book.findById(bookId).populate('comments').exec(function(err, book) {
     if (err) {
