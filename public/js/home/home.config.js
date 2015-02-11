@@ -9,9 +9,8 @@ function initialConfig($routeProvider) {
       popularLists: function(BookList) {
         return BookList.popular();
       },
-      popularComments: function() {
-        // TODO: return Comment.popular();
-        return [];
+      popularComments: function($http) {
+        return $http.get('/api/comments/popular').$promise;
       }
     }
   });
