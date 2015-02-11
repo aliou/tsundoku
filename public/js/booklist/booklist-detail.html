@@ -11,25 +11,18 @@
 	<h4>{{ list.description }}</h4>
 
 	<hr>
-  <div class='row'>
-    <div class=''>
+	<div class='row'>
 
-        <div class='book-list-element col-md-2' ng-repeat='book in list.books'>
-          <a href='#/books/{{ book._id }}'>
-	    <img src='{{ book.coverUrl }}' alt='{{ book.title }}' tooltip-placement='top' tooltip='{{ book.title}} '>
-          </a>
-      </div>
+	  <div class='book-list-element col-md-2' ng-repeat='book in list.books'>
+	    <a href='#/books/{{ book._id }}'>
+	      <img src='{{ book.coverUrl }}' alt='{{ book.title }}' tooltip-placement='top' tooltip='{{ book.title}} '>
+	    </a>
+	  </div>
 
-    </div>
-  </div>
-
+	</div>
       </div>
     </div>
   </div>
 </div>
-
-
-</div>
-
 
 <footer class='container footer' ng-include="'/js/shared/footer.html'"></footer>
