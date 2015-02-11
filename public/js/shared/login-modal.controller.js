@@ -31,7 +31,6 @@ function loginModalController($scope, $modalInstance, $http, Session) {
     }).error(function(data, status, headers, config) {
       $scope.error = { message: 'An error occured. Please try again.' };
     });
-    $modalInstance.close();
   };
 }
 
