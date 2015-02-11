@@ -3,7 +3,6 @@ var User = require('./user.model');
 exports.list = function(req, res) {
   User.find({}, function(err, users) {
     if (err) {
-      // TODO: Create error message.
       return res.status(500).json(err);
     }
 
@@ -16,7 +15,6 @@ exports.show = function(req, res) {
 
   User.findOne({ username: username }, function(err, user) {
     if (err) {
-      // TODO: Create error message.
       return res.status(500).json(err);
     }
 
@@ -24,17 +22,16 @@ exports.show = function(req, res) {
       return res.status(400);
     }
 
-    // TODO: Create a user redux sending only the informations we need.
-    res.json(user);
+    res.json({ _id: user._id, username: user.username,  });
   });
 }
 
 exports.login = function(req, res) {
-  res.json(req.user);
+  res.json({ _id: req.user._id });
 };
 
 exports.signup = function(req, res) {
-  res.json(req.user);
+  res.json({ _id: req.user._id });
 };
 
 exports.logout = function(req, res) {
