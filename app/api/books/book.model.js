@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+var mongoose  = require('mongoose');
+var Goodreads = require('./goodreads');
+var Comment   = require('./../Comment/comment.model');
 
 var BookSchema = new mongoose.Schema({
   title:       { type: String, required: true },
@@ -6,6 +9,7 @@ var BookSchema = new mongoose.Schema({
   description: { type: String, required: true },
   createdAt:   { type: Date,   default: Date.now },
   goodreadsId: { type: String, required: true },
+  comments:    [ { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' } ],
   isbn:        String,
   length:      Number,
   coverUrl:    String,

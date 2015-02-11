@@ -25,7 +25,7 @@ exports.show = function (req, res) {
   var booklistId = req.param('id');
 
   BookList.findById(booklistId).
-    populate('books').exec(function(err, booklist) {
+    populate('books comments').exec(function(err, booklist) {
     if (err) {
       return res.status(500).json(err);
     }

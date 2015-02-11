@@ -32,7 +32,7 @@ exports.popular = function (req, res) {
 exports.show = function (req, res) {
   var bookId = req.param('id');
 
-  Book.findById(bookId, function(err, book) {
+  Book.findById(bookId).populate('comments').exec(function(err, book) {
     if (err) {
       // TODO: Create error message.
       return res.status(500).json(err);
