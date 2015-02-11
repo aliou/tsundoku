@@ -4,12 +4,13 @@
   <div class='row'>
     <div class='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1'>
 
-      <div class='book-list row' ng-repeat='list in booklists'>
-          <a href='#/booklist/{{ list._id }}'>
+      <div class='book-list-elem' ng-repeat='list in lists'>
+	<h1><a href='#/lists/{{ list._id }}'>
             {{ list.title }}
-          </a>
+	</a></h1>
+	<h4>{{ list.description }}</h4>
+	<hr class="list-separator"/>
       </div>
-
     </div>
   </div>
 </div>

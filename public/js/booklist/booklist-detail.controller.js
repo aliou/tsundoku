@@ -1,5 +1,5 @@
-function BookListListDetailController($scope, booklist) {
-  $scope.booklist = booklist;
+function BookListDetailController($scope, list) {
+  $scope.list = list;
 }
 
-angular.module('app').controller('BookListListDetailCtrl', BookListListDetailController);
+angular.module('app').controller('BookListDetailCtrl', BookListDetailController);

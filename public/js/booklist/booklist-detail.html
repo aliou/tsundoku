@@ -1,17 +1,35 @@
 <header class='book-header'></header>
 
-<div class='container'>
-  <h1 class='book-page-title'>{{ booklist.title }}</h1>
+<div class='container home-main-content'>
   <div class='row'>
-    <div class='book-page-cover col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3'>
-      {{ booklist.title }}
+    <div class='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1'>
+
+      <div class='book-list-elem'>
+	<h1><a href='#/lists/{{ list._id }}'>
+	    {{ list.title }}
+	</a></h1>
+	<h4>{{ list.description }}</h4>
+
+	<hr>
+  <div class='row'>
+    <div class=''>
+
+        <div class='book-list-element col-md-2' ng-repeat='book in list.books'>
+          <a href='#/books/{{ book._id }}'>
+	    <img src='{{ book.coverUrl }}' alt='{{ book.title }}' tooltip-placement='top' tooltip='{{ book.title}} '>
+          </a>
+      </div>
+
     </div>
-    <div class='book-page-meta col-lg-7 col-md-7'>
-      <div class='book-page-description'>
-        <p>{{ booklist.description }}</p>
+  </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
+</div>
+
 
 <footer class='container footer' ng-include="'/js/shared/footer.html'"></footer>

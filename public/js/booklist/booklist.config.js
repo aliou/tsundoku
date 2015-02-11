@@ -4,7 +4,7 @@ function bookListConfig($routeProvider) {
       templateUrl: 'js/booklist/booklist-list.html',
       controller: 'BookListListCtrl',
       resolve: {
-        booklists: function($route, BookList) {
+        lists: function($route, BookList) {
           return BookList.query({ page: $route.current.params.page } ).$promise;
         }
       }
@@ -13,7 +13,7 @@ function bookListConfig($routeProvider) {
       templateUrl: 'js/booklist/booklist-detail.html',
       controller: 'BookListDetailCtrl',
       resolve: {
-        booklist: function($route, BookList) {
+        list: function($route, BookList) {
           return BookList.get({ id: $route.current.params.id });
         }
       }
