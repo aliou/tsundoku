@@ -22,7 +22,7 @@ exports.show = function(req, res) {
       return res.status(400);
     }
 
-    res.json({ _id: user._id, username: user.username,  });
+    res.json({ _id: user._id, username: user.username });
   });
 }
 
