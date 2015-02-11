@@ -2,7 +2,7 @@ var _        = require('underscore');
 var BookList = require('./booklist.model');
 
 exports.list = function (req, res) {
-  var query = BookList.find({}, function(err, booklists) {
+  BookList.find({}, function(err, booklists) {
     if (err) {
       return res.status(500).json(err);
     }
