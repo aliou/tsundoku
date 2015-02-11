@@ -39,33 +39,6 @@ app.use('/api/books',    require('./api/books'));
 app.use('/api/lists',    require('./api/booklist'));
 app.use('/api/comments', require('./api/comments'));
 
-app.get('/api/fuckthat', function(req, res) {
-  // 54b93beadcb4a86190caf5ba
-  var Book = require('./api/book/book.model');
-
-  Book.findById('54b93beadcb4a86190caf5ba', function(err, book) {
-    if (err) {
-      res.status(500).json(err);
-    }
-
-    // book.comments.push(
-  });
-});
-
-// TODO: delete this.
-// app.post('/api/comments', function(req, res) {
-//   // var Comment = require('./api/comment/comment.model');
-// 
-//   var c = new Comment(req.body);
-//   c.save(function(err) {
-//     if (err) {
-//       res.status(500).json(err);
-//     }
-// 
-//     res.json(c);
-//   });
-// });
-
 app.get('*', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/../public/index.html'))
 });
