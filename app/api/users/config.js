@@ -38,8 +38,10 @@ module.exports = function(passport) {
         return done(null, false, { message: 'User already exists' });
       } else {
         var user = new User();
+
         user.username       = username;
         user.provider       = 'local';
+        user.local.email    = req.body.email;
         user.local.password = user.generateHash(password);
 
         user.save(function(err) {
