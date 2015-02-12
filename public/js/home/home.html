@@ -26,25 +26,25 @@
     </div>
   </div>
 
-  <div class='row'>
-    <div class='col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1'>
-      <h3 class='text-center'>Popular comments right now</h3>
-      <div class='review-list row'>
-        <div class='review-list-element col-md-10' ng-repeat='comment in popularComments'>
-          <h3>{{ comment.book.title }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class='col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1'>
-      <h3 class='text-center'>Popular lists right now</h3>
-      <div class='booklist-list row'>
-        <div class='booklist-list-element col-md-12' ng-repeat='list in popularLists'>
-          <h3>{{ list.name }}</h3>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- <div class='row'> -->
+  <!--   <div class='col&#45;lg&#45;6 col&#45;lg&#45;offset&#45;1 col&#45;md&#45;6 col&#45;md&#45;offset&#45;1'> -->
+  <!--     <h3 class='text&#45;center'>Popular comments right now</h3> -->
+  <!--     <div class='review&#45;list row'> -->
+  <!--       <div class='review&#45;list&#45;element col&#45;md&#45;10' ng&#45;repeat='comment in popularComments'> -->
+  <!--         <h3>{{ comment.book.title }}</h3> -->
+  <!--       </div> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!--  -->
+  <!--   <div class='col&#45;lg&#45;4 col&#45;lg&#45;offset&#45;1 col&#45;md&#45;4 col&#45;md&#45;offset&#45;1'> -->
+  <!--     <h3 class='text&#45;center'>Popular lists right now</h3> -->
+  <!--     <div class='booklist&#45;list row'> -->
+  <!--       <div class='booklist&#45;list&#45;element col&#45;md&#45;12' ng&#45;repeat='list in popularLists'> -->
+  <!--         <h3>{{ list.name }}</h3> -->
+  <!--       </div> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </div> -->
 </div>
 
 <footer class='container footer' ng-include="'/js/shared/footer.html'"></footer>
